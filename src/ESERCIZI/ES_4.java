@@ -35,9 +35,7 @@ public class ES_4 {
         ordini.add(ordine1);
 
         List<Product> productsOrderedByTier2 = ordini.stream()
-                .filter(order -> order.getCustomer().getTier() == 2)
-                .filter(order -> !order.getOrderDate().isBefore(LocalDate.of(2021, 2, 1)))
-                .filter(order -> !order.getOrderDate().isAfter(LocalDate.of(2021, 4, 1)))
+                .filter(order -> order.getCustomer().getTier() == 2 && !order.getOrderDate().isBefore(LocalDate.of(2021, 2, 1)) && !order.getOrderDate().isAfter(LocalDate.of(2021, 4, 1)))
                 .flatMap(order -> order.getProducts().stream())
                 .collect(Collectors.toList());
 
