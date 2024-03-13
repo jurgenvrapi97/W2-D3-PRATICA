@@ -13,6 +13,18 @@ public class Customer {
         this.tier = tier;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getTier() {
+        return tier;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
